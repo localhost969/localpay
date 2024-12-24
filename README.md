@@ -1,6 +1,14 @@
 # LocalPay
 
 A simple, offline-friendly payment system for NGIT students to send and receive money locally using their 12-digit roll numbers.
+![image](https://github.com/user-attachments/assets/aace6325-a983-4d47-85a5-e60c6a5a675f)
+![image](https://github.com/user-attachments/assets/98ba7021-6ed2-4461-b270-165736c08bcb)
+![image](https://github.com/user-attachments/assets/2c454c25-e614-49ff-8a62-bbedead8a2e4)
+
+
+
+
+
 
 ---
 
