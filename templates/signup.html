@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container col-md-6 col-lg-4 mt-5 animate__animated animate__fadeInUp">
+    <div class="card p-4">
+        <h2 class="text-center mb-4">Create an Account</h2>
+        <form id="signupForm">
+            <div class="mb-3">
+                <label for="roll_number" class="form-label">Roll Number</label>
+                <input type="text" id="roll_number" name="roll_number" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="pin" class="form-label">PIN</label>
+                <input type="password" id="pin" name="pin" class="form-control" required>
+            </div>
+            <button type="button" class="btn btn-success w-100" onclick="signupUser()">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+<!-- Success/Error Modal -->
+<div class="modal fade" id="responseModal" tabindex="-1" aria-labelledby="responseModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" id="modalHeader">
+        <h5 class="modal-title" id="responseModalLabel">Signup Status</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Success/Error message will go here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    // Submit the signup form via fetch and show status in a modal
+    function signupUser() {
+        const form = document.getElementById('signupForm');
+        const formData = new FormData(form);
+        
+        fetch('/signup', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Signup successful
+                document.getElementById('modalHeader').classList.add('bg-success');
+                document.getElementById('modalBody').innerText = data.message;
+
+                // Redirect to login page or automatically log in if needed
+                setTimeout(() => {
+                    window.location.href = '/login';  // Redirect to login page
+                }, 1000);
+            } else {
+                // Signup failed
+                document.getElementById('modalHeader').classList.add('bg-danger');
+                document.getElementById('modalBody').innerText = data.message || 'An error occurred!';
+            }
+            new bootstrap.Modal(document.getElementById('responseModal')).show();
+        })
+        .catch(error => {
+            // Error with the request
+            document.getElementById('modalHeader').classList.add('bg-danger');
+            document.getElementById('modalBody').innerText = 'Error: ' + error.message;
+            new bootstrap.Modal(document.getElementById('responseModal')).show();
+        });
+    }
+</script>
+
+{% endblock %}
