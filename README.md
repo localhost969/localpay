@@ -1,9 +1,11 @@
 # LocalPay
 
 A simple, offline-friendly payment system for NGIT students to send and receive money locally using their 12-digit roll numbers.
-![image](https://github.com/user-attachments/assets/aace6325-a983-4d47-85a5-e60c6a5a675f)
-![image](https://github.com/user-attachments/assets/98ba7021-6ed2-4461-b270-165736c08bcb)
-![image](https://github.com/user-attachments/assets/2c454c25-e614-49ff-8a62-bbedead8a2e4)
+![image](https://github.com/user-attachments/assets/2c902854-b2e6-42a6-ac2f-af376546151b)
+![image](https://github.com/user-attachments/assets/6807fa27-d0cd-4782-882d-f626c01503b1)
+![image](https://github.com/user-attachments/assets/2fa99d8d-7831-4993-8493-05d5f1d688e3)
+![image](https://github.com/user-attachments/assets/718d2f8c-3ce2-4c71-b186-12ec849e2ef7)
+
 
 
 
@@ -18,7 +20,7 @@ A simple, offline-friendly payment system for NGIT students to send and receive 
 - **Send Money**: Transfer funds easily.
 - **Transaction History**: View recent transactions.
 - **Balance Refresh**: Update dynamically.
-
+- **Admin Panel**: Admin can moniter users.
 ---
 
 ## How to Run Locally
